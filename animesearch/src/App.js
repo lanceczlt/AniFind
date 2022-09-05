@@ -10,8 +10,13 @@ import Results from './pages/Results';
 import SingleView from './pages/SingleView';
 import NavBar from './components/MuiNavbar'
 import { SearchContext } from './context/search';
+import { Helmet } from 'react-helmet';
 
 function App() {
+
+
+
+
 
   const [animeData, setAnimeData] = useState([]);
   const [singleData, setSingleData] = useState({});
@@ -33,6 +38,11 @@ function App() {
 
   return (
     <SearchContext.Provider value={{search, animeData, setData, singleData, setSingle}}>
+    <Helmet>
+    <title>AniFind</title>
+    <meta name="description" content="test on react-helmet" />
+    <meta name="theme-color" content="#ccc" />
+    </Helmet>
     <Router>
       <NavBar />
       <main>

@@ -7,8 +7,6 @@ import './Home.scss';
 
 const Home = () => {
 
-
-
     const navigate = useNavigate();
     const search = useContext(SearchContext);
     const [input, setInput] = useState('');
