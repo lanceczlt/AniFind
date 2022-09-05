@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Typography, Link } from '@mui/material';
-// import './SingleAnime.css';
+import './SingleAnime.css';
 
 const SingleAnime = (props) => {
   console.log(props.info);
@@ -17,7 +17,7 @@ const SingleAnime = (props) => {
       spacing={10}
       direction="row"
       justify="center"
-      alignContent="center"
+      justifyContent="center"
       alignItems="center"
       className="singleanime__container"
     >
