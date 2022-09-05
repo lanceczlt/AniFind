@@ -13,12 +13,6 @@ const Home = () => {
     const search = useContext(SearchContext);
     const [input, setInput] = useState('');
 
-    // useEffect(() => {
-    //     search.search('metal').then((data) => {
-    //         console.log(data);
-    //     });
-    // },[search])
-
     const handleSearch = (event) => {
         event.preventDefault();
         search.search(input).then((data) => {
@@ -35,7 +29,7 @@ const Home = () => {
                 <Grid item>
                     <img
                     alt="deku"
-                    src={process.env.PUBLIC_URL + '/deku.png'}
+                    src={process.env.PUBLIC_URL + '/deku-logo.png'}
                     height={400}
                     />
                 </Grid>
