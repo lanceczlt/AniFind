@@ -1,7 +1,7 @@
 .animecard__container {
-    margin: 10px;
-  }
-  
+  margin: 10px;
+}
+
 .animecard__paper {
   display: flex;
   align-Content: center;
@@ -10,7 +10,7 @@
   flex-direction: column;
   padding: 10px;
 }
-  
+
 .animecard__paper:hover {
   background-color: lightgray;
   opacity: 0.8;

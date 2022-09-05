@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Typography, Link } from '@mui/material';
-import './SingleAnime.css';
+import './SingleAnime.scss';
 
 const SingleAnime = (props) => {
   console.log(props.info);

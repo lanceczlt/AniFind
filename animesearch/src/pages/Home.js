@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../context/search'
 import { FormControl, Input, IconButton, Grid } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-// import './Home.scss';
+import './Home.scss';
 
 const Home = () => {
 
@@ -14,7 +14,7 @@ const Home = () => {
     const [input, setInput] = useState('');
 
     // useEffect(() => {
-    //     search.search('Naruto').then((data) => {
+    //     search.search('metal').then((data) => {
     //         console.log(data);
     //     });
     // },[search])
@@ -30,40 +30,39 @@ const Home = () => {
       };
     
     return (
-        <Grid containerdirection="column" justify="center" alignItems="center" alignContent="center">
-        <Grid item>
-          <Grid item>
-            <img
-              alt="luffy"
-              src={process.env.PUBLIC_URL + '/luffy.png'}
-              height={420}
-              width={550}
-            />
-          </Grid>
-          <Grid item>
-            <form className="home__form">
-              <FormControl type="submit" className="home__formControl">
-                <Input
-                  placeholder="Search for you favorite anime..."
-                  value={input}
-                  onChange={(event) => setInput(event.target.value)}
-                  className="home__input"
-                />
-                <IconButton
-                  className="home__iconButton"
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  disabled={!input}
-                  onClick={handleSearch}
-                >
-                  <SearchIcon />
-                </IconButton>
-              </FormControl>
-            </form>
-          </Grid>
+        <Grid container direction="column" justify="center" alignItems="center" alignContent="center">
+            <Grid item>
+                <Grid item>
+                    <img
+                    alt="deku"
+                    src={process.env.PUBLIC_URL + '/deku.png'}
+                    height={400}
+                    />
+                </Grid>
+                <Grid item>
+                    <form className="home__form">
+                        <FormControl type="submit" className="home__formControl">
+                            <Input
+                            placeholder="Search anime..."
+                            value={input}
+                            onChange={(event) => setInput(event.target.value)}
+                            className="home-input"
+                            />
+                            <IconButton
+                                className="home__iconButton"
+                                variant="contained"
+                                color="primary"
+                                type="submit"
+                                disabled={!input}
+                                onClick={handleSearch}
+                            >
+                            <SearchIcon />
+                        </IconButton>
+                    </FormControl>
+                    </form>
+                </Grid>
+            </Grid>
         </Grid>
-      </Grid>
   )
 }
 

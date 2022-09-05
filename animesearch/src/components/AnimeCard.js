@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../context/search';
 import { Link, Paper, Grid , ImageListItem, Typography } from '@mui/material';
-import './AnimeCard.css';
+import './AnimeCard.scss';
 
 const AnimeCard = (props) => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const AnimeCard = (props) => {
 
   const onClickHandler = (event) => {
     event.preventDefault();
-    fetch(`https://api.jikan.moe/v3/anime/${props.anime.mal_id}`)
+    fetch(`https://api.jikan.moe/v3/anime/${props.anime.mal_id}`) //to be updated to v4 API, v3 depreciated soon
       .then((response) => response.json())
       .then((data) => {
         search.setSingle(data);
@@ -44,7 +44,6 @@ const AnimeCard = (props) => {
           <Link
             component="button"
             variant="body1"
-            style={{ marginBottom: 0 }}
             onClick={onClickHandler}
           >
             Learn More
