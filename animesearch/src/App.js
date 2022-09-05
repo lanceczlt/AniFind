@@ -7,7 +7,7 @@ import {
   Routes, 
 } from 'react-router-dom';
 import Home from './pages/Home';
-import Result from './pages/Result';
+import Results from './pages/Results';
 import SingleView from './pages/SingleView';
 import NavBar from './components/MuiNavbar'
 import { SearchContext } from './context/search';
@@ -39,7 +39,7 @@ function App() {
       <main>
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/result" element={<Result />} />
+        <Route path="/results" element={<Results />} />
         <Route path="/single-view" element={<SingleView />} />
         <Route 
           path="*" 

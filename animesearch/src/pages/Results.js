@@ -8,6 +8,8 @@ const Results = () => {
   const search = useContext(SearchContext);
   const [dataExists, setDataExists] = useState(true);
 
+
+
   useEffect(() => {
     if (search.animeData === undefined || search.animeData.length === 0) {
       try {
@@ -18,9 +20,11 @@ const Results = () => {
         setDataExists(false);
       }
     }
+    console.log(search.animeData);
   }, [search]);
 
   return (
+    // <Box>{(dataExists && <AnimeList data={search.animeData} />) || 'Data does not exist'}</Box>
     <Box mt={2}>
       {(dataExists && <AnimeList data={search.animeData} />) || (
         <Typography>No Data Exists</Typography>
