@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Typography, Link } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import './SingleAnime.scss';
 
 const SingleAnime = (props) => {

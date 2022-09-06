@@ -1,5 +1,5 @@
 import AnimeCard from './AnimeCard';
-import { ImageList , ImageListItem} from '@mui/material';
+import { ImageList } from '@mui/material';
 
 
 const AnimeList = (props) => {
