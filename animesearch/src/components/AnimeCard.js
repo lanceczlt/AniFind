@@ -26,7 +26,7 @@ const AnimeCard = (props) => {
   const search = useContext(SearchContext);
   const onClickHandler = (event) => {
     event.preventDefault();
-    fetch(`https://api.jikan.moe/v3/anime/${props.anime.mal_id}`) //to be updated to v4 API, v3 depreciated soon
+    fetch(`https://api.jikan.moe/v4/anime/${props.anime.mal_id}`) //to be updated to v4 API, v3 depreciated soon
       .then((response) => response.json())
       .then((data) => {
         search.setSingle(data);
@@ -36,15 +36,15 @@ const AnimeCard = (props) => {
   };
 
 
-  const title = props.anime.title.length > 25 ? `${props.anime.title.substring(0, 16)}...` : props.anime.title;
-  const imageUrl = props.anime.image_url;
-  const synopsis = props.anime.synopsis.length > 25 ? `${props.anime.synopsis.substring(0, 16)}...` : props.anime.synopsis;
+  const title = props.anime.title.length > 13 ? `${props.anime.title.substring(0, 13)}...` : props.anime.title;
+  const imageUrl = props.anime.images.jpg.image_url;
+  const synopsis =  props.anime.synopsis == null ? null : props.anime.synopsis.length > 25 ? `${props.anime.synopsis.substring(0, 16)}...` : props.anime.synopsis;
 
   return (
-    <ImageListItem className="animecard-container" variant="standard">
-      <Grid container item rowSpacing={1}  xs={3}>
+    <ImageListItem variant="standard" className="animecard-container" >
+      <Grid container item xs={3} >
         <Paper className="animecard-paper">
-          <img src={imageUrl} alt={title} style={{ maxHeight: 300}} />
+          <img src={imageUrl} alt={title} style={{ width: 200, height: 300 }}/>
           <Typography variant="h5" component="h2">
             {title}
           </Typography>
@@ -54,6 +54,7 @@ const AnimeCard = (props) => {
           <Link
             component="button"
             variant="body1"
+            style={{ marginBottom: 0 }}
             onClick={onClickHandler}
           >
             Learn More

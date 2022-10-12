@@ -3,13 +3,13 @@ import { Grid, Paper, Typography } from '@mui/material';
 import './SingleAnime.scss';
 
 const SingleAnime = (props) => {
-  console.log(props.info);
+  console.log( props);
   const title = props.info.title;
   const imageUrl = props.info.image_url;
-  const rating = props.info.rating;
-  const airing = String(props.info.airing);
-  const broadcast = props.info.broadcast;
-  const score = props.info.score;
+  const rating = "";
+  const airing = "";
+  const broadcast = props.info.data.broadcast == null ? "No broadcast data found" : props.info.data.broadcast ;
+  const score = props.info.data.score == null ? "Not scored" : props.info.data.score ;
   const url = props.info.url;
   return (
     <Grid

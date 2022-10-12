@@ -16,7 +16,7 @@ const Results = () => {
         search.setData(JSON.parse(localStorage.getItem('myData')));
         setDataExists(true);
       } catch (error) {
-        console.log(error);
+        console.log("results error "+ error);
         setDataExists(false);
       }
     }
