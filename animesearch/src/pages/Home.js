@@ -16,10 +16,10 @@ const Home = () => {
         search.search(input).then((data) => {
             console.log( data);
           search.setData(data.data);
-          localStorage.setItem('myData', JSON.stringify(data.results));
+          localStorage.setItem('searchData', JSON.stringify(data.results));
           navigate('/results');
         });
-      };
+    };
     
     return (
         <Grid container direction="column" justify="center" alignItems="center" alignContent="center">

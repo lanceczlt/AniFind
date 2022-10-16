@@ -1,6 +1,5 @@
 import AnimeCard from './AnimeCard';
 import { ImageList } from '@mui/material';
-
 import './AnimeList.scss'
 
 const AnimeList = (props) => {

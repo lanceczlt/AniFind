@@ -9,11 +9,10 @@ const Results = () => {
   const [dataExists, setDataExists] = useState(true);
 
 
-
   useEffect(() => {
     if (search.animeData === undefined || search.animeData.length === 0) {
       try {
-        search.setData(JSON.parse(localStorage.getItem('myData')));
+        search.setData(JSON.parse(localStorage.getItem('searchData')));
         setDataExists(true);
       } catch (error) {
         console.log("results error "+ error);

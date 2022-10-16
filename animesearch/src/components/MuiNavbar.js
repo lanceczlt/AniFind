@@ -6,7 +6,7 @@ import { AppBar, Toolbar, Typography , InputBase, Box, IconButton} from '@mui/ma
 import { SearchContext } from '../context/search';
 import { useNavigate } from 'react-router-dom';
 
-const Search = styled('div')(({ theme }) => ({
+const Search = styled('form')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -58,13 +58,13 @@ export default function SearchAppBar() {
     event.preventDefault();
     search.search(input).then((data) => {
         console.log(data);
-      search.setData(data.results);
-      localStorage.setItem('myData', JSON.stringify(data.results));
+      search.setData(data.data);
+      localStorage.setItem('searchData', JSON.stringify(data.results));
       navigate('/results');
     });
   };
 
-
+  
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -83,8 +83,7 @@ export default function SearchAppBar() {
               AniFind
               </Typography>
             </IconButton>
-          <form  onSubmit={handleSearch}>
-            <Search>
+            <Search onSubmit={handleSearch}> 
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -95,7 +94,6 @@ export default function SearchAppBar() {
                 onChange={(event) => setInput(event.target.value)}
               />
             </Search>
-          </form>
         </Toolbar>
       </AppBar>
     </Box>
