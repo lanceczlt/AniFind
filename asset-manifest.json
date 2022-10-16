@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/AniFind/static/css/main.4b836d6a.css",
-    "main.js": "/AniFind/static/js/main.ea3f435f.js",
+    "main.css": "/AniFind/static/css/main.c00a65cd.css",
+    "main.js": "/AniFind/static/js/main.3d09a30c.js",
     "index.html": "/AniFind/index.html",
-    "main.4b836d6a.css.map": "/AniFind/static/css/main.4b836d6a.css.map",
-    "main.ea3f435f.js.map": "/AniFind/static/js/main.ea3f435f.js.map"
+    "main.c00a65cd.css.map": "/AniFind/static/css/main.c00a65cd.css.map",
+    "main.3d09a30c.js.map": "/AniFind/static/js/main.3d09a30c.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b836d6a.css",
-    "static/js/main.ea3f435f.js"
+    "static/css/main.c00a65cd.css",
+    "static/js/main.3d09a30c.js"
   ]
 }
