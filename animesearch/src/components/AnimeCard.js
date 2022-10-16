@@ -26,7 +26,7 @@ const AnimeCard = (props) => {
   const search = useContext(SearchContext);
   const onClickHandler = (event) => {
     event.preventDefault();
-    fetch(`https://api.jikan.moe/v4/anime/${props.anime.mal_id}`) //to be updated to v4 API, v3 depreciated soon
+    fetch(`https://api.jikan.moe/v4/anime/${props.anime.mal_id}`) 
       .then((response) => response.json())
       .then((data) => {
         search.setSingle(data);
