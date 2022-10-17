@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../context/search';
-import { Link, Paper, Grid , ImageListItem, Typography } from '@mui/material';
+import { Link, Paper, Grid , ImageListItem, Typography} from '@mui/material';
 import './AnimeCard.scss';
 
 // const theme = createTheme({
@@ -38,12 +38,12 @@ const AnimeCard = (props) => {
 
   const title = props.anime.title.length > 13 ? `${props.anime.title.substring(0, 13)}...` : props.anime.title;
   const imageUrl = props.anime.images.jpg.image_url;
-  const synopsis =  props.anime.synopsis == null ? null : props.anime.synopsis.length > 25 ? `${props.anime.synopsis.substring(0, 16)}...` : props.anime.synopsis;
+  const synopsis =  props.anime.synopsis == null ? null : props.anime.synopsis.length > 25 ? `${props.anime.synopsis.substring(0, 25)}...` : props.anime.synopsis;
 
   return (
     <ImageListItem variant="standard" className="animecard-container" >
-      <Grid container item xs={3} >
-        <Paper className="animecard-paper">
+      <Grid container item>
+        <Paper className="animecard-paper" style={{height:400, maxHeight:400, width: 200, maxWidth:200}}>
           <img src={imageUrl} alt={title} style={{ width: 200, height: 300 }}/>
           <Typography variant="h5" component="h2">
             {title}

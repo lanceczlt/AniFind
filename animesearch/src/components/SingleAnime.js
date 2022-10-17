@@ -18,7 +18,7 @@ const SingleAnime = (props) => {
   // console.log('score data: ' + score)
   const url = props.info.data.url;
   // console.log('url: ' + url)
-
+  const episodes = props.info.data.episodes == null ? "No episodes released yet" : props.info.data.episodes;
 
 
   return (
@@ -31,10 +31,10 @@ const SingleAnime = (props) => {
       alignItems="center"
       className="singleanime__container"
     >
-      <Grid item>
+      <Grid item xs="auto">
         <img src={imageUrl} alt={title} className="singleanime__image" />
       </Grid>
-      <Grid item>
+      <Grid item >
         <Paper elevation={3} className="singleanime__description">
           <Typography variant="h4" component="h2">
             {title}
@@ -50,6 +50,9 @@ const SingleAnime = (props) => {
           </Typography>
           <Typography variant="h5" component="h2">
             Rating: {rating}
+          </Typography>
+          <Typography variant="h5" component="h2">
+            Episodes: {episodes}
           </Typography>
           <a href={url}>
               MyAnimeList
