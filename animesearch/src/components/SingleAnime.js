@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Paper, Typography } from '@mui/material';
 import './SingleAnime.scss';
 
+
 const SingleAnime = (props) => {
   // console.log( props);
 
@@ -19,22 +20,21 @@ const SingleAnime = (props) => {
   const url = props.info.data.url;
   // console.log('url: ' + url)
   const episodes = props.info.data.episodes == null ? "No episodes released yet" : props.info.data.episodes;
+  const synopsis = props.info.data.synopsis == null ? "No synopsis released yet" :  props.info.data.synopsis;
 
 
   return (
     <Grid
       container
-      spacing={10}
-      direction="row"
+      spacing={5}
+      direction="column"
       justify="center"
       justifyContent="center"
       alignItems="center"
       className="singleanime__container"
     >
-      <Grid item xs="auto">
+      <Grid container xs="auto">
         <img src={imageUrl} alt={title} className="singleanime__image" />
-      </Grid>
-      <Grid item >
         <Paper elevation={3} className="singleanime__description">
           <Typography variant="h4" component="h2">
             {title}
@@ -58,6 +58,13 @@ const SingleAnime = (props) => {
               MyAnimeList
           </a>
         </Paper>
+      </Grid>
+      <Grid item xs="auto">
+        <Paper elevation={3} className='singleanime__synopsis'>
+            <Typography> 
+              {synopsis}
+            </Typography>
+          </Paper>
       </Grid>
     </Grid>
   );

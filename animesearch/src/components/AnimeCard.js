@@ -38,7 +38,7 @@ const AnimeCard = (props) => {
 
   const title = props.anime.title.length > 13 ? `${props.anime.title.substring(0, 13)}...` : props.anime.title;
   const imageUrl = props.anime.images.jpg.image_url;
-  const synopsis =  props.anime.synopsis == null ? null : props.anime.synopsis.length > 25 ? `${props.anime.synopsis.substring(0, 25)}...` : props.anime.synopsis;
+  const synopsis =  props.anime.synopsis == null ? null : props.anime.synopsis.length > 30 ? `${props.anime.synopsis.substring(0, 30)}...` : props.anime.synopsis;
 
   return (
     <ImageListItem variant="standard" className="animecard-container" >
